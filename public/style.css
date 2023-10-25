@@ -1,0 +1,53 @@
+body {
+    background-image: url('kaohsiung.jpg');
+    background-size: contain;
+	background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #ccc; 
+}
+
+h2{
+	text-align: center;
+}
+
+label {
+    display: block;
+	text-align: left;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}

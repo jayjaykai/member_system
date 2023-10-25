@@ -1,0 +1,35 @@
+h2 {
+    background-color: #333;
+    color: #ffffff;
+    text-align: center;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #111; 
+}
+.member{
+    color: blue;
+    font-size:larger;
+    font-weight: bold;
+}
+.welcome-form {
+    background-color: #54b4eb;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #111; 
+}
+.note-form {
+    background-color: lightblue;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #111; 
+}
+.spanstl{
+    margin-left: 10px;
+    font-style: italic;
+}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>登入</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>會員登入畫面</h2>
+        <form method="POST" action="/login">
+            <label for="username">信箱：</label>
+            <input type="text" name="email" required><br>
+            <label for="password">密碼：</label>
+            <input type="password" name="password" required><br><br>
+            <input type="submit" value="登入"><br><br>
+			<a href="/register">還不是會員嗎？申請會員</a>
+        </form>
+    </div>
+</body>
+</html>

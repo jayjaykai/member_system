@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員頁面</title>
+    <link rel="stylesheet" type="text/css" href="welcome.css">
+</head>
+<body>
+    <h2>歡迎光臨會員頁面</h2>
+    <br>
+    <form class="welcome-form">
+        <div class="member">您好，{{ session["nickname"] }} 
+            <span class="spanstl"><a href="/signout">登出</a></span>
+        </div>
+        <br>
+        <div><a href="/founder">版主資訊</a></div>
+        <div><a href="/createnote">新增筆記</a></div>
+    </form>
+    <br>
+    <form class="note-form">
+        <h3>筆記列表</h3>
+        <ul>
+            {% for note in notes %}
+                <li><strong>{{ note.title }}</strong>: {{ note.content }}</li>
+                <br>
+            {% endfor %}
+        </ul>
+    </form>
+</body>
+</html>

@@ -1,0 +1,110 @@
+body {
+    background-color: #f1f1f1;
+    color: #333;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-image: url('pic.jpg'); /* 替換 'your-image.jpg' 為您的圖片文件路徑或URL */
+    background-repeat: no-repeat; /* 防止圖片重複 */
+    background-size: cover; /* 自適應視窗大小 */
+    background-attachment: fixed; /* 固定背景圖片 */
+}
+form{
+  width:900px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.maintitle {
+    width:900px;
+    margin: 0 auto;
+    background-color: #333;
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+    height: 80px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}   
+.headtitle {
+    text-align: left;
+    background-color: #333;
+    color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+}       
+.subtitle {
+    text-align: left;
+    background-color:darkslategrey;
+    width:fit-content;
+    color: #fff;
+    font-size: 20px;
+    font-weight:bolder;
+}       
+div{
+    text-align: left;
+    background-color:seashell;
+}
+.spantitle{
+    font-size: 20px;
+    font-style:inherit;
+    font-weight: bold;
+    text-align:center;
+    background-color: #333;
+    color: #fff;
+    text-decoration:underline;
+    cursor: zoom-in;
+}
+.void-br {
+  display: block;
+  content: "";
+  background-color: seashell; /* 空白行的背景颜色 */
+  border: none; /* 去除边框 */
+  margin-bottom: 50px;
+}
+.frame{
+  display: flex;
+}
+.jobtitle{
+  font-size: 20px;
+  width: 80%;
+  border-top: 1px solid #f7e7e7; 
+  border-bottom: 1px solid #f7e7e7; 
+}
+.position{
+  font-size: 15px;
+}
+.companny{
+  font-weight: bold;
+  flex: none;
+}
+.duration{
+  display: flex;
+  flex:auto;
+  justify-content: flex-end;
+}
+.myimage{
+  width: 200px; 
+  height: auto ;
+  border: 2px solid #333;
+  border-radius: 2px;
+  float: right;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.small-text {
+  position:relative; 
+  top: -10px; 
+  right: 0;
+  font-size: 12px;
+}
+.focus{
+  color: red;
+  font-weight: bold;
+}
+.custom-image {
+  width: 300px; 
+  height: auto; 
+  
+  border: 1px solid #ccc; /* 添加边框 */
+}

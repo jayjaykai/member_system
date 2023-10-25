@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>記錄頁面</title>
+    <link rel="stylesheet" type="text/css" href="createnote.css">
+</head>
+<body>
+    <h1>記錄頁面</h1>
+        <form action="/addnote" method="POST">
+            <label for="title">事件標題</label>
+            <input type="text" id="title" name="title" required>
+            <br>
+            <label for="content">事件內容</label>
+            <textarea id="content" name="content" required></textarea>
+            <br>
+            <input type="submit" value="儲存紀錄">
+        </form>
+</body>
+</html>
