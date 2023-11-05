@@ -19,6 +19,16 @@
     </form>
     <br>
     <form class="note-form">
+        <h3>資料庫紀錄內容</h3>
+        <ul>
+            {% for note in notes_from_db %}
+            <li><strong>{{ note.title }}</strong>: {{ note.content }}</li>
+            <br>
+            {% endfor %}
+        </ul>
+    </form>
+    <br>
+    <form class="note-form" action="/doaction_note" method="POST">
         <h3>筆記列表</h3>
         <ul>
             {% for note in notes %}
@@ -26,6 +36,13 @@
                 <br>
             {% endfor %}
         </ul>
+        <button type="submit" name="action" value="save" onclick="return confirmAction('確定要儲存到資料庫嗎？')">儲存到資料庫</button>
+        <button type="submit" name="action" value="clear" onclick="return confirmAction('確定要清除資料嗎？')">清除資料</button>
     </form>
 </body>
+<script>
+    function confirmAction(message) {
+        return confirm(message);
+    }
+</script>
 </html>

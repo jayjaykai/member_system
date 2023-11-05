@@ -59,14 +59,16 @@ def error():
 @app.route("/welcome")
 def welcome():
     if("nickname" in session):
-        title = request.args.get("title")
-        content = request.args.get("content")
+        # title = request.args.get("title")
+        # content = request.args.get("content")
         
-        if title and content:
-            notes.append({'title': title, 'content': content})
+        # if title and content:
+        #     notes.append({'title': title, 'content': content})
         
-        return render_template("welcome.html", notes=notes)
-        # return render_template("welcome.html")
+        # return render_template("welcome.html", notes=notes)
+        collection=db.record
+        notes_from_db = list(collection.find())
+        return render_template("welcome.html", notes_from_db=notes_from_db)
     else:
         return redirect("/")
 
@@ -112,9 +114,25 @@ notes = []
 def add_note():
     title = request.form['title']
     content = request.form['content']
-    print(notes)
     notes.append({'title': title, 'content': content})
     print(notes)
-    return render_template("welcome.html", notes=notes)
+    collection=db.record
+    notes_from_db = list(collection.find())
+    return render_template("welcome.html", notes=notes, notes_from_db=notes_from_db)
+
+@app.route("/doaction_note", methods=['POST'])
+def doaction():
+    global notes
+    action =request.form['action']
+    if action=='save':
+        data=db.record
+        for note in notes:
+            data.insert_one(note)
+        notes.clear()
+        return redirect("/welcome")
+    elif action=='clear':
+        notes.clear()
+        return redirect("/welcome")
+
 # 啟動網站伺服器, 可透過 port 參數指定埠號
 app.run(port=3000)
