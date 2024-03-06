@@ -23,16 +23,16 @@ except Exception as e:
 
 # 把資料放到資料庫中
 def create_app():
+    # 把資料放到資料庫中
     db=client.member_system
     
     # 初始化 Flask 伺服器
-    from flask import Flask, render_template, request, redirect, session
+    from flask import *
     app=Flask(
         __name__,
         static_folder="public",
         static_url_path="/"
     )
-    notes = []
     app.secret_key="any string but secret"
     
     @app.route('/')
@@ -44,6 +44,11 @@ def create_app():
        email=request.form["email"]
        password=request.form["password"]
     
+       # Check if both email and password are ADM
+       if(email == "ADM" and password == "ADM"):
+            session["nickname"] = "Admin"
+            return redirect("/welcome")
+       
        con=db.user
        result=con.find_one({
            "$and":[
@@ -65,6 +70,9 @@ def create_app():
     @app.route("/welcome")
     def welcome():
         if("nickname" in session):
+            if session["nickname"] == "Admin":  # Check if the user is ADM
+                # If it's ADM, you can customize the behavior or load different template
+                return render_template("welcome.html")
             # title = request.args.get("title")
             # content = request.args.get("content")
             
@@ -115,16 +123,19 @@ def create_app():
     def creat_note():
         return render_template("createnote.html")
     
-    # notes = []
+    notes = []
     @app.route('/addnote', methods=['POST'])
     def add_note():
         title = request.form['title']
         content = request.form['content']
         notes.append({'title': title, 'content': content})
         print(notes)
-        collection=db.record
-        notes_from_db = list(collection.find())
-        return render_template("welcome.html", notes=notes, notes_from_db=notes_from_db)
+        if session["nickname"] != "Admin":
+            collection=db.record
+            notes_from_db = list(collection.find())
+            return render_template("welcome.html", notes=notes, notes_from_db=notes_from_db)
+        else:
+            return render_template("welcome.html", notes=notes)
     
     @app.route("/doaction_note", methods=['POST'])
     def doaction():
