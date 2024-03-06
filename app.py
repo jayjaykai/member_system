@@ -32,6 +32,7 @@ def create_app():
         static_folder="public",
         static_url_path="/"
     )
+    notes = []
     app.secret_key="any string but secret"
     
     @app.route('/')
@@ -114,7 +115,7 @@ def create_app():
     def creat_note():
         return render_template("createnote.html")
     
-    notes = []
+    # notes = []
     @app.route('/addnote', methods=['POST'])
     def add_note():
         title = request.form['title']
