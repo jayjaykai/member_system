@@ -139,7 +139,7 @@ def create_app():
     
     @app.route("/doaction_note", methods=['POST'])
     def doaction():
-        global notes
+        # global notes
         action =request.form['action']
         if action=='save':
             data=db.record
