@@ -26,7 +26,7 @@ def create_app():
     db=client.member_system
     
     # 初始化 Flask 伺服器
-    from flask import Flask, render_template
+    from flask import Flask, render_template, request
     app=Flask(
         __name__,
         static_folder="public",
