@@ -1,4 +1,4 @@
-h2 {
+.welcome{
     background-color: #333;
     color: #ffffff;
     text-align: center;
@@ -6,12 +6,18 @@ h2 {
     margin: 0 auto;
     padding: 20px;
     border-radius: 10px;
-    border: 1px solid #111; 
+    border: 1px solid #111;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
 }
 .member{
-    color: blue;
+    color: #ffffff;
     font-size:larger;
     font-weight: bold;
+    display: flex;
+    align-items: right;
 }
 .welcome-form {
     background-color: #54b4eb;
@@ -19,7 +25,7 @@ h2 {
     margin: 0 auto;
     padding: 20px;
     border-radius: 10px;
-    border: 1px solid #111; 
+    border: 1px solid #111;
 }
 .note-form {
     background-color: lightblue;
@@ -27,9 +33,23 @@ h2 {
     margin: 0 auto;
     padding: 20px;
     border-radius: 10px;
-    border: 1px solid #111; 
+    border: 1px solid #111;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    overflow-wrap: break-word; /* 或者使用 word-wrap: break-word; */
+    max-width: 100%; /* 設定最大寬度為父元素的寬度 */
+}
+.spanstl a {
+    color: #ffffff;
 }
 .spanstl{
+    color: #ffffff;
     margin-left: 10px;
     font-style: italic;
+    text-decoration: underline;
+}
+.nav-container {
+    margin-top: 10px;
 }
