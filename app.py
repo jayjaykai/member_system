@@ -1,11 +1,15 @@
 # 載入 pymongo 套件
 import pymongo
+import os
 from bson.objectid import ObjectId
 # 連線到 Mongo 雲端資料庫
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
+from dotenv import load_dotenv
 
-uri = "mongodb+srv://root:root123@cluster0.xphs9mf.mongodb.net/?retryWrites=true&w=majority"
+load_dotenv()
+
+uri = os.getenv("MONGODB_URI")
 
 # Create a new client and connect to the server
 client = MongoClient(uri, server_api=ServerApi('1'))
